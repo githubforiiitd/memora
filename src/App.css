@@ -1,0 +1,181 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.text-gradient {
+  background-image: linear-gradient(135deg, #8a6bff 0%, #a68cf1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.calendar-day-with-memory {
+  position: relative;
+}
+
+.calendar-day-with-memory::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+/* Add smooth scrolling to the whole document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add transition to all interactive elements */
+button, a, input, select, textarea {
+  transition: all 0.2s ease;
+}
+
+.memory-card {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.memory-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+}
+
+.memory-tag {
+  animation: tagSlideIn 0.3s ease-out forwards;
+}
+
+@keyframes tagSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dropdown-menu-content {
+  animation: dropdownSlideIn 0.2s ease-out;
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Add gradient buttons */
+.btn-gradient {
+  background: linear-gradient(135deg, #A68CF1, #CBB6FF);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 0 0 2px rgba(166, 140, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Highlight active sidebar item with subtle animation */
+.sidebar-item-active {
+  background: linear-gradient(90deg, #bfa9f3 0%, rgba(191, 169, 243, 0.2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-item-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hover state for sidebar items */
+.sidebar-item:hover:not(.sidebar-item-active) {
+  background-color: #F3F0FC;
+}
+
+/* Enhanced focus state for inputs */
+input:focus, select:focus, textarea:focus {
+  border-color: #A68CF1;
+  box-shadow: 0 0 0 3px rgba(166, 140, 241, 0.3);
+}
+
